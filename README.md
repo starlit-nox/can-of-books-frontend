@@ -61,28 +61,44 @@ We will have to approach each other with patience and understanding and pass on 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
+The reason we are building this application is to see what books are in available and unavailable. The application will track what is and isn't in stock as well as show a list of all possible options for books. This allows users to have a simplified expereince when it comes to searching for a certain book.
+
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+The user just has to go to the render link to access the digital library.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+The application is a website that allows users to view books that are available and unavialbe to use/brorrow. The languages used for this application is React.JS and CSS. The libraries that are being used is React-Bootstrap, Express, and Axios. To deply this application we used Render.
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
+5-30-2023 9:00am - Accidentally created things for the backend and placed them in here.
+
+5-30-2023 12:00pm - Had to start over.
+
+5-30-2023 1:40pm - Made a GET request to the /books
+
+5-30-2023 2:30pm - Sotre the book data from the app in state
+
+5-31-2023 9:30am - Made it so the books won't render if there's 0 in the array.
+
+5-31-2023 Added a Bootstrap Carousel.
+
 ## Estimates
 <!-- See below -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources t
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: ________________________________
+Name of feature: Book Component (And Caraousel)
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 3 Days
 
-Start time: _____
+Start time: 9AM 5/30/2023
 
 Finish time: _____
 

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Carousel } from 'react-bootstrap';
 
 const BestBooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     // Make a GET request to your API to fetch all the books
-    fetch('/api/books') // Replace '/api/books' with your actual API endpoint
+    fetch('/api/books') // Replace when Molly completed backend
       .then(response => response.json())
       .then(data => {
         setBooks(data); // Update the books state with the fetched data
@@ -19,18 +20,21 @@ const BestBooks = () => {
     <>
       <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
 
-      {books.length ? (
-        /* Render the books in a Carousel component or any other desired UI */
-        <div>
+      {/* Check if there are books in the array */}
+      {books.length > 0 ? (
+        /* Render the books using a Bootstrap carousel */
+        <Carousel>
+          {/* Map over the books array and render each book as a Carousel.Item */}
           {books.map(book => (
-            <div key={book._id}>
+            <Carousel.Item key={book._id}>
               <h3>{book.title}</h3>
               <p>{book.description}</p>
               <p>Status: {book.status}</p>
-            </div>
+            </Carousel.Item>
           ))}
-        </div>
+        </Carousel>
       ) : (
+        /* Render a message if no books are found */
         <h3>No Books Found :(</h3>
       )}
     </>
