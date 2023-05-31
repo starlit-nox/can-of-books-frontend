@@ -69,7 +69,7 @@ The user just has to go to the render link to access the digital library.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-The application is a website that allows users to view books that are available and unavialbe to use/brorrow. The languages used for this application is React.JS and CSS. The libraries that are being used is React-Bootstrap, Express, and Axios. To deply this application we used Render.
+The application is a website that allows users to view books that are available and unavialbe to use/brorrow. The languages used for this application is React.JS and CSS. The libraries that are being used is React-Bootstrap, Express, Reacter-Router-Dom, and Axios. To deply this application we used Render.
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
