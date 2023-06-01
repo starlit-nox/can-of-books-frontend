@@ -6,6 +6,7 @@ const BookFormModal = ({ books, setBooks }) => {
     const [showModal, setShowModal] = useState(false);
     const [bookData, setBookData] = useState({
         title: '',
+        author: '', 
         description: '',
         status: ''
     });
@@ -21,7 +22,7 @@ const BookFormModal = ({ books, setBooks }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('/api/books', bookData);
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}books`, bookData);
             const newBook = response.data;
 
             setBooks((prevBooks) => [...prevBooks, newBook]);
@@ -32,6 +33,7 @@ const BookFormModal = ({ books, setBooks }) => {
 
         setBookData({
             title: '',
+            author: '', // Reset author field
             description: '',
             status: '',
         });

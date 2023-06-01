@@ -7,11 +7,19 @@ const BestBooks = () => {
 
   useEffect(() => {
     // Make a GET request to your API to fetch all the books
-    fetch('/api/books') // Replace when Molly completed backend
-      .then(response => response.json())
-      .then(data => {
-        setBooks(data); // Update the books state with the fetched data
+     fetch(`${process.env.REACT_APP_SERVER_URL}books`)    // Molly's API, calling backend to frontend
+      .then(response => {
+        let fixJson = response.json()
+        console.log(fixJson)
+        return (fixJson)
       })
+      .then(data => {
+        console.log(data)
+        setBooks(data)
+      })
+     
+      // Update the books state with the fetched data
+      // })
       .catch(error => {
         console.log('Error fetching books:', error);
       });
