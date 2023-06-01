@@ -100,6 +100,6 @@ Estimate of time needed to complete: 3 Days
 
 Start time: 9AM 5/30/2023
 
-Finish time: _____
+Finish time: 11AM 5/31/2023
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 Days and 2 Hours

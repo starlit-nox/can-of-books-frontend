@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import BestBooks from './BestBooks';
-import About from './About'; // Assuming you have an About component file
+import BestBooks from './BestBooks'; // Importing BestBooks Component
+import About from './About'; // Importing About Component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
