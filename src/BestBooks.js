@@ -16,8 +16,7 @@ const BestBooks = () => {
       .then(data => {
         console.log(data)
         setBooks(data)
-      })
-     
+      }) 
       // Update the books state with the fetched data
       // })
       .catch(error => {
