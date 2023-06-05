@@ -123,3 +123,15 @@ Start time: 1PM 5/31/2023
 Finish time: 9AM 6/4/2023
 
 Actual time needed to complete: 4 Days and 8 Hours
+
+<!-- Lab 13 -->
+
+Name of feature: UPDATE of CRUD
+
+Estimate of time needed to complete: 2 Days
+
+Start time: 10PM 6/4/2023
+
+Finish time: 
+
+Actual time needed to complete: 
