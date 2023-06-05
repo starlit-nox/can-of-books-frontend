@@ -50,6 +50,8 @@ const BookFormModal = ({ books, setBooks }) => {
 
     return (
         <>
+
+        {/* add book exists here, intermission is over */}
             <Button variant="primary" onClick={handleModalOpen}>
                 Add Book
             </Button>
