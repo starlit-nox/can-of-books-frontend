@@ -76,23 +76,31 @@ The application is a website that allows users to view books that are available 
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-5-30-2023 9:00am - Accidentally created things for the backend and placed them in here.
+Lab 11 5-30-2023 9:00am - Accidentally created things for the backend and placed them in here.
 
-5-30-2023 12:00pm - Had to start over.
+Lab 11 5-30-2023 12:00pm - Had to start over.
 
-5-30-2023 1:40pm - Made a GET request to the /books
+Lab 11 5-30-2023 1:40pm - Made a GET request to the /books
 
-5-30-2023 2:30pm - Sotre the book data from the app in state
+Lab 11 5-30-2023 2:30pm - Sort the book data from the app in state
 
-5-31-2023 9:30am - Made it so the books won't render if there's 0 in the array.
+Lab 11 5-31-2023 9:30am - Made it so the books won't render if there's 0 in the array.
 
-5-31-2023 Added a Bootstrap Carousel.
+Lab 11 5-31-2023 12:00PM Added a Bootstrap Carousel.
+
+Lab 12 5-31-2023 1:30PM Created Create Button (Static)
+
+Lab 12 6-4-2023 7:00PM Created Delete Button (Static)
+
+Lab 12 6-4-2023 9:33PM Created Delete Button (Functional)
 
 ## Estimates
 <!-- See below -->
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+<!-- Lab 11 -->
 
 Name of feature: Book Component (And Caraousel)
 
@@ -103,3 +111,15 @@ Start time: 9AM 5/30/2023
 Finish time: 11AM 5/31/2023
 
 Actual time needed to complete: 1 Days and 2 Hours
+
+<!-- Lab 12 -->
+
+Name of feature: CREATE and DELETE of CRUD
+
+Estimate of time needed to complete: 4 Days
+
+Start time: 1PM 5/31/2023
+
+Finish time: 9AM 6/4/2023
+
+Actual time needed to complete: 4 Days and 8 Hours
