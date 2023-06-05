@@ -6,10 +6,21 @@ import BestBooks from './BestBooks'; // Importing BestBooks Component
 import About from './About'; // Importing About Component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginButton from './LoginButton';
+import LoginoutButton from './LogoutButton';
 
 const App = () => {
   return (
     <>
+  {/*added 6-5-23 this is the start of the buttons */}
+<main className='column'>
+<h1>Auth0 Login</h1>
+<LoginButton></LoginButton>
+<LoginoutButton></LoginoutButton>
+
+</main>
+  {/*added 6-5-23 this is the end of the buttons */}
+
       <Router className="App">
         <Header />
         <Routes>
@@ -23,6 +34,12 @@ const App = () => {
             element={<About />}
           />
         </Routes>
+      <main className='column'>
+<h1>Auth0 Login</h1>
+<LoginButton></LoginButton>
+<LoginoutButton></LoginoutButton>
+
+</main>
         <Footer />
       </Router>
     </>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel, Button } from 'react-bootstrap';
+import BookFormModal from './BookFormModal';
 import axios from 'axios';
 
 const BestBooks = () => {
@@ -77,9 +78,10 @@ const BestBooks = () => {
         </Carousel>
       ) : (
         <h3>No Books Found :(</h3>
-      )}
-    </>
-  );
-};
+        )}
+        <BookFormModal books={books} setBooks={setBooks} />
+      </>
+    );
+  };
 
 export default BestBooks;
