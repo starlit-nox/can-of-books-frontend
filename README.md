@@ -53,7 +53,7 @@ We will talk to that person and ask them to hang back some and/or help the indiv
 **How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?**
 We will have to approach each other with patience and understanding and pass on our knowledge to the other person to help them get to a place of understanding to resolve conflict and help raise their skill level.
 
-# Project Name
+# Can of Books
 
 **Author**: Kaydee Kelly, Molly Porphura
 **Version**: 0.0.10 (increment the patch/fix version number if you make more commits past your first submission)
@@ -130,8 +130,8 @@ Name of feature: UPDATE of CRUD
 
 Estimate of time needed to complete: 2 Days
 
-Start time: 10PM 6/4/2023
+Start time: 9:30PM 6/4/2023
 
-Finish time: 
+Finish time: 10:30 6/4/2023?? (Submitted, but ask Teacher)
 
-Actual time needed to complete: 
+Actual time needed to complete: 1 Hour (TBA)
