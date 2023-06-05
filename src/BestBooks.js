@@ -1,21 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
-
 
 const BestBooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    // Make a GET request to fetch all the books from the server
-    fetch(`${process.env.REACT_APP_SERVER_URL}books`)
-      .then(response => response.json())
-      .then(data => setBooks(data))
-      .catch(error => {
-        console.log('Error fetching books:', error);
-      });
+    // Fetch the book list from localStorage on initial render
+    const storedBooks = JSON.parse(localStorage.getItem('books'));
+    if (storedBooks) {
+      setBooks(storedBooks);
+    } else {
+      fetchBooks();
+    }
   }, []);
+
+  const fetchBooks = async () => {
+    try {
+      // Make a GET request to fetch all the books from the server
+      const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}books`);
+      const fetchedBooks = response.data;
+      setBooks(fetchedBooks);
+      // Save the fetched book list to localStorage
+      localStorage.setItem('books', JSON.stringify(fetchedBooks));
+    } catch (error) {
+      console.error('Error fetching books:', error);
+    }
+  };
 
   const deleteBook = async (bookId) => {
     try {
@@ -23,6 +34,8 @@ const BestBooks = () => {
       await axios.delete(`${process.env.REACT_APP_SERVER_URL}books/${bookId}`);
       // Update the books state by filtering out the deleted book
       setBooks(prevBooks => prevBooks.filter(book => book._id !== bookId));
+      // Remove the deleted book from localStorage
+      localStorage.setItem('books', JSON.stringify(books.filter(book => book._id !== bookId)));
       console.log('Book deleted:', bookId);
     } catch (error) {
       console.error('Error deleting book:', error);
@@ -44,7 +57,7 @@ const BestBooks = () => {
               <p>{book.description}</p>
               <p>Status: {book.status}</p>
               {/* Add the Delete button with onClick event */}
-              <Button variant="danger" onClick={() => deleteBook(book._id)}>Delete</Button> {/* Delete button */}
+              <button onClick={() => deleteBook(book._id)}>Delete</button> {/* Delete button */}
             </Carousel.Item>
           ))}
         </Carousel>
@@ -57,6 +70,3 @@ const BestBooks = () => {
 };
 
 export default BestBooks;
-
-
-// Testing
