@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
+
 
 const BestBooks = () => {
   const [books, setBooks] = useState([]);
@@ -42,7 +44,7 @@ const BestBooks = () => {
               <p>{book.description}</p>
               <p>Status: {book.status}</p>
               {/* Add the Delete button with onClick event */}
-              <button onClick={() => deleteBook(book._id)}>Delete</button> {/* Delete button */}
+              <Button variant="danger" onClick={() => deleteBook(book._id)}>Delete</Button> {/* Delete button */}
             </Carousel.Item>
           ))}
         </Carousel>
