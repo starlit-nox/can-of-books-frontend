@@ -1,28 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-// import axios from 'axios';
+import axios from 'axios';
+import { Button } from 'react-bootstrap';
+
 
 const BestBooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    // Make a GET request to your API to fetch all the books
-     fetch(`${process.env.REACT_APP_SERVER_URL}books`)    // Molly's API, calling backend to frontend
-      .then(response => {
-        let fixJson = response.json()
-        console.log(fixJson)
-        return (fixJson)
-      })
-      .then(data => {
-        console.log(data)
-        setBooks(data)
-      }) 
-      // Update the books state with the fetched data
-      // })
+    // Make a GET request to fetch all the books from the server
+    fetch(`${process.env.REACT_APP_SERVER_URL}books`)
+      .then(response => response.json())
+      .then(data => setBooks(data))
       .catch(error => {
         console.log('Error fetching books:', error);
       });
   }, []);
+
+  const deleteBook = async (bookId) => {
+    try {
+      // Make a DELETE request to the server to delete the book
+      await axios.delete(`${process.env.REACT_APP_SERVER_URL}books/${bookId}`);
+      // Update the books state by filtering out the deleted book
+      setBooks(prevBooks => prevBooks.filter(book => book._id !== bookId));
+      console.log('Book deleted:', bookId);
+    } catch (error) {
+      console.error('Error deleting book:', error);
+    }
+  };
 
   return (
     <>
@@ -38,6 +43,8 @@ const BestBooks = () => {
               <h3>{book.title}</h3>
               <p>{book.description}</p>
               <p>Status: {book.status}</p>
+              {/* Add the Delete button with onClick event */}
+              <Button variant="danger" onClick={() => deleteBook(book._id)}>Delete</Button> {/* Delete button */}
             </Carousel.Item>
           ))}
         </Carousel>
@@ -47,6 +54,9 @@ const BestBooks = () => {
       )}
     </>
   );
-}
+};
 
 export default BestBooks;
+
+
+// Testing
