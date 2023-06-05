@@ -64,6 +64,7 @@ const EditBookModal = ({ book, updateBook }) => {
                             <Form.Label>Title</Form.Label>
                             <Form.Control
                                 type="text"
+                                id="title" // Add id="title" for the input element
                                 name="title"
                                 value={editedBookData.title}
                                 onChange={handleInputChange}
