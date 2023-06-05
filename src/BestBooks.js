@@ -7,7 +7,7 @@ const BestBooks = () => {
 
   useEffect(() => {
     // Make a GET request to fetch all the books from the server
-    fetch(`${process.env.REACT_APP_SERVER_URL}books`) // Molly's API, calling backend to frontend
+    fetch(`${process.env.REACT_APP_SERVER_URL}books`)
       .then(response => response.json())
       .then(data => setBooks(data))
       .catch(error => {
@@ -41,7 +41,8 @@ const BestBooks = () => {
               <h3>{book.title}</h3>
               <p>{book.description}</p>
               <p>Status: {book.status}</p>
-              <button onClick={() => deleteBook(book._id)}>Delete</button>
+              {/* Add the Delete button with onClick event */}
+              <button onClick={() => deleteBook(book._id)}>Delete</button> {/* Delete button */}
             </Carousel.Item>
           ))}
         </Carousel>
