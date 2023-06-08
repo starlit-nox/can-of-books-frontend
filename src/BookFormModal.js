@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const BookFormModal = ({ books, setBooks }) => {
     const [showModal, setShowModal] = useState(false);
     const [bookData, setBookData] = useState({
         title: '',
-        author: '', 
+        author: '',
         description: '',
-        status: ''
+        status: '',
     });
+    const { getAccessTokenSilently } = useAuth0();
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -22,7 +24,12 @@ const BookFormModal = ({ books, setBooks }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}books`, bookData);
+            const API = `${process.env.REACT_APP_SERVER_URL}/books`;
+            const token = await getAccessTokenSilently();
+            const response = await axios.post(API, bookData, {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+
             const newBook = response.data;
 
             setBooks((prevBooks) => [...prevBooks, newBook]);
@@ -50,8 +57,6 @@ const BookFormModal = ({ books, setBooks }) => {
 
     return (
         <>
-
-        {/* add book exists here, intermission is over */}
             <Button variant="primary" onClick={handleModalOpen}>
                 Add Book
             </Button>
@@ -110,7 +115,3 @@ const BookFormModal = ({ books, setBooks }) => {
 };
 
 export default BookFormModal;
-
-// this is so it maybe WON'T get destroyed by the wrath of DJ
-
-// PULL REQUEST???!?!?
